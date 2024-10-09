@@ -15,7 +15,6 @@
         @endsession
 
         <h1 style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: .75rem; margin-top: -1.75rem">Log in</h1>
-
         <form method="POST" action="{{ route('login') }}"> 
             
             @csrf  
