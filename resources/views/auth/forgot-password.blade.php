@@ -20,7 +20,7 @@
             </div>
         @endsession
 
-        <x-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4" />p
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
