@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">   
-    <title>Home</title>
+    <title>Elibrarium</title>
 </head>
 <body>
     <!-- Navbar Section -->
@@ -22,10 +22,10 @@
             <!-- Navigation Menu -->
             <nav class="nav-menu">
                 <ul>
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='/catalog.blade.php'>Catergory</a></li>
-                    <li><a href='blog.html'>Anouncement</a></li>
-                    <li><a href='about.html'>About Us</a></li>
+                    <li><a href="{{ route('home.index') }}">Home</a></li>
+                    <li><a href="{{ route('home.catalog') }}">Category</a></li>
+                    <li><a href="{{ route('home.announcement') }}">Announcement</a></li>
+                    <li><a href="{{ route('home.about') }}">About Us</a></li>
                         @if (Route::has('login'))
                             @auth
                                 <div class="dropdown">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             @else
-                                <li><a class='signup-btn' href='{{ route('login') }}'>Login</a></li>
+                                <li><a class='signup-btn' href='{{ route('login') }}'>Sign in</a></li>
                             @endauth
                         @endif
                 </ul>

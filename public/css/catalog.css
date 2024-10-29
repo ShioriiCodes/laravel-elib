@@ -1,0 +1,218 @@
+
+
+/*Search Catalog*/
+#search {
+    background: linear-gradient(#131b31bd, #131b3125), url('../image/bg.png');
+    padding: 15px;
+    text-align: center;
+    background-color: #131B31;
+    align-items: center;
+    padding-top: 80px;
+}
+
+
+/*Browse catalog*/
+#browse {
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+    background-color: #131B31;
+    border-radius: 10px;
+    max-width: 1500px;
+}
+
+#browse h2 {
+    margin-bottom: 20px;
+    color: #FC5400;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categories ul li {
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    text-align: center;
+    background-color: #FC5400;
+    margin: 4px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #FC5400;
+    transition: 0.4s;
+    padding: 5px 15px;
+    font-size: 15px
+
+}
+
+.categories ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.5s;
+    padding: 3px 6px;
+    font-size: 15px;
+}
+
+.categories ul li:hover {
+    background-color: #b43c00;
+}
+
+/*Book Details Section*/
+.book-details-container {
+    max-width: 1500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #131b31b4;
+    flex-wrap: wrap;
+}
+
+/* Book Information Styles */
+.category {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.category h3 {
+    font-size: 34px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 33px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: 10px;
+}
+
+
+.project-item img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: auto;
+    transition: transform 0.3s;
+}
+
+.project-item p {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.project-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-column {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.quick-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.social-media-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.social-media-links li {
+    display: inline-block;
+}
+
+.social-media-links a {
+    color: #ccc;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+    color: #fff;
+    
+}
+
+/* Additional hover effect */
+.social-media-links a:hover i {
+    transform: scale(1.4);
+    transition: transform 0.3s;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.quick-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
