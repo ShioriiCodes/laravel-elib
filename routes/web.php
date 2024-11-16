@@ -26,27 +26,10 @@ Route::middleware([
 route::get('/home',[AdminController::class, 'index']);
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
-// Define route for Home
-Route::get('/home', function () {
-    return view('home.index'); 
-})->name('home.index');
-
-// Define route for Category
-Route::get('/category', function () {
-    return view('home.catalog'); 
-})->name('home.catalog');
-
-// Define route for Announcement
-Route::get('/announcement', function () {
-    return view('home.announcement'); 
-})->name('home.announcement');
-
-// Define route for About Us
-Route::get('/about', function () {
-    return view('home.about'); 
-})->name('home.about');
-
-
+Route::get('/home/index', [HomeController::class, 'home'])->name('home.index');
+Route::get('/home/catalog', [HomeController::class, 'catalog'])->name('home.catalog');
+Route::get('/home/announcement', [HomeController::class, 'announcement'])->name('home.announcement');
+Route::get('/home/about', [HomeController::class, 'about'])->name('home.about');
 
 Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
 Route::get('/home/ComSci-info-&-gen-technology', [HomeController::class, 'csigt'])->name('home.csigt');
@@ -59,3 +42,6 @@ Route::get('/home/arts-recreation', [HomeController::class, 'artsRecreation'])->
 Route::get('/home/literature', [HomeController::class, 'literature'])->name('home.literature');
 Route::get('/home/history-geography', [HomeController::class, 'historyGeography'])->name('home.history-geography');
 Route::get('/home/course-of-studies', [HomeController::class, 'program'])->name('home.program');
+
+Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('users.index');

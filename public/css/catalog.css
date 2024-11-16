@@ -1,5 +1,4 @@
 
-
 /*Search Catalog*/
 #search {
     background: linear-gradient(#131b31bd, #131b3125), url('../image/bg.png');
@@ -9,7 +8,6 @@
     align-items: center;
     padding-top: 80px;
 }
-
 
 /*Browse catalog*/
 #browse {

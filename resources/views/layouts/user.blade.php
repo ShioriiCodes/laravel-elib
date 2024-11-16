@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -21,7 +22,7 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen" style="background-color: #e3e3e3">
+        <div class="min-h-screen" style="background-color: #001551a5">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
@@ -33,12 +34,14 @@
                 </header>
             @endif
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+            <div>
+                <h1>User Layout</h1>
+                <p>This is a reusable layout.</p>
+            </div> 
 
+            <!-- Page Content -->    
+                   
+        </div>
         @stack('modals')
 
         @livewireScripts

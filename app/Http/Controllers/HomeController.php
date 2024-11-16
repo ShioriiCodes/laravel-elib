@@ -39,12 +39,22 @@ class HomeController extends Controller
 
        return redirect()->back();
     }
-
+    public function home()
+    {
+        return view('home.index');
+    }
     public function catalog()
     {
         return view('home.catalog');
     }
-    
+    public function announcement()
+    {
+        return view('home.announcement');
+    }
+    public function about()
+    {
+        return view('home.about');
+    }
 
     public function create()
     {

@@ -6,18 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Book Catalogs</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubunto:wght@400;700&display=swap">
-        <link rel="stylesheet" type="text/css" href="css/homeregistered.css">
-        <link rel="stylesheet" type="text/css" href="css/search.css">
+        <link rel="stylesheet" href="{{ asset('css/homeregistered.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/search.css') }}">
         <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
+        
     </head>
     <body>
+
             <div class="container">
                 <!-- Sidebar for Categories -->
                 <div class="sidebar">
                     <div class="categories">
                         <h2>Categories</h2>
                         <ul>
-                            <li><a href="{{ route('home.csigt') }}" class="{{ request()->routeIs('home.csigt') ? 'active' : '' }}">Computer science, information & general technology</a></li>
+                            <li><a href="{{ route('home.csigt') }}" class="{{ request()->routeIs('home.csigt') ? 'active' : '' }}">Computer science, information & general works</a></li>
                             <li><a href="{{ route('home.philoandpsy') }}" class="{{ request()->routeIs('home.philoandpsy') ? 'active' : '' }}">Philosophy and Psychology</a></li>
                             <li><a href="{{ route('home.Religion') }}" class="{{ request()->routeIs('home.religion') ? 'active' : '' }}">Religion</a></li>
                             <li><a href="{{ route('home.social-science') }}" class="{{ request()->routeIs('home.social-science') ? 'active' : '' }}">Social Science</a></li>

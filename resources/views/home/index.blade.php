@@ -33,7 +33,7 @@
                                         <ion-icon name="filter-outline"></ion-icon>
                                     </button>
                                     <div class="dropdown-content">
-                                        <a href="{{ url('/dashboard') }}">{{ Auth::user()->name }}</a>
+                                        <a href="{{ Auth::user()->user_type === 'admin' ? url('/dashboard') : url('/home') }}">{{ Auth::user()->name }}</a>
                                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                                             @csrf
                                             <a href="#" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>

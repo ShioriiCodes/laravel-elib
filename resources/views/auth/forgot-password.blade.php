@@ -11,7 +11,7 @@
         </div>
 
         <div class="mb-4 text-sm text-gray-600 text-left">
-        {{ __('Forgot your password ba bossing? Boss? BOSSING!! Ikaw nanaman!? Kamusta ang buhay buhay! dali na mag reset kana ng PASSWORD KANG KUPAL KA!!') }}
+        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
 
         @session('status')

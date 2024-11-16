@@ -8,8 +8,8 @@
     <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">   
-    <link rel="stylesheet" type="text/css" href="css/catalog.css">
-    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/catalog.css">
+    <title>Elibrarium</title>
 </head>
 <body>
     <!-- Navbar Section -->
@@ -17,8 +17,8 @@
         <div class="header-container">
             <!-- Library Name & Logo -->
             <div class="logo">
-                <img src="logo/logo2.png" alt="Library Logo">
-                <h1>Home</h1>
+                <img src="/logo/logo2.png" alt="Library Logo">
+                <h1>Category</h1>
             </div>
             <!-- Navigation Menu -->
             <nav class="nav-menu">

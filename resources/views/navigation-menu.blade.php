@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="z-10 bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="z-10 bg-[#131B31] border-b border-gray-100 ">
     <!-- Primary Navigation Menu -->
     <div class="z-10 max-w-7xl mx-auto px-4 sm:px-7 lg:px-8">
         <div class="z-10 flex justify-between h-16">
@@ -11,21 +11,27 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
-                        {{ __('View') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('home.create') }}" :active="request()->routeIs('home.create')">
-                        Users
-                     </x-nav-link>
-                </div>
+              
+                    @if(Auth::user()->user_type === 'user')
+                        
+                    @elseif(Auth::user()->user_type === 'admin')
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                                {{ __('View') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link href="{{ route('home.create') }}" :active="request()->routeIs('home.create')">
+                                {{ __('User') }}
+                            </x-nav-link>
+                        </div>
+                    @endif
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

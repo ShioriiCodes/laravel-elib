@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 use GuzzleHttp\Psr7\Response;
+
 use Illuminate\Auth\Access\Gate;
 
 class AdminController extends Controller
@@ -36,7 +37,14 @@ class AdminController extends Controller
     public function dashboard()
     {
         $user_type = User::with('user_type')->get();
+    }
 
-        
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->user_type === 'admin') {
+            return redirect()->route('dashboard');
+        }
+
+        return redirect()->route('view');
     }
 }
