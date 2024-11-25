@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    margin-left: 0;
+    background-color: #ffffff;
+    /* background-color: #1a1a4b; */
+    color: #dadada;
+}
+
+/* Header Styles */
+.nav-menu {
+    display: flex;
+    margin-right: 3%;
+}
+
+.nav-menu h1{
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.nav-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.5s;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* controlled by JavaScript */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #162241;
+    min-width: 90px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+    margin-left: -30%;
+    text-align: center;
+}
+
+.dropdown-content a {
+    color: 131B31;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: #131B31;
+    background-color: #f9f9f9;
+    text-transform: capitalize;
+}
+
+.login-img {
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    object-fit: cover;
+    margin-right: -10px;
+}
+
+
+.login-img:hover {
+    box-shadow: 0px 0px 15px #FC5400;
+    transform: scale(1.05);
+}
+
+
+.login-img:active {
+    background-color: #FC5400;
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+}
+
+
+/* Header Section */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #0f2150;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+}
+
+.logo h1{
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 15px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #131B31;
+    padding: 20px;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+/* CSS to highlight the active link */
+.sidebar ul li a.active {
+    color: #FC5400;
+    font-weight: bold;
+}
+
+.categories {
+    margin-top: 30%;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10%;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    color: #FC5400;
+}
+
+/* Catalog and books grid styles */
+.catalog {
+    margin-left: 20%; 
+    padding: 20px;
+}
+
+.catalog h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-left: 1%;
+    color: #1c1c1c;
+}
+
+.books-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-item {
+    width: 24%;
+    margin: 1%;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.66);
+   
+}
+
+.book-item img {
+    width: auto;
+    height: 150px;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.66);
+    transition: transform 0.3s;
+}
+
+.book-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #1c1c1c;
+}
+
+.book-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.book-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Style the button */
+.download-button {
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center; 
+    background-color: #131B31; 
+    color: #fff;
+    border: none; 
+    padding: 6px 10px;
+    font-size: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.download-button ion-icon {
+    margin-right: 5px; 
+    font-size: 15px; 
+    color: #fff; 
+}
+
+.download-button:hover {
+    background-color: #1a1a4b;
+}
+
+.download-button:active {
+    background-color: #14149e;
+}
