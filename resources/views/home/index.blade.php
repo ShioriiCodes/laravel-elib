@@ -68,7 +68,7 @@
             </div>
             <div class="book">
                 <img src="/image/Mybook1.png" alt="Book 2">
-                <span class="badge">10</span>
+                <span class="badge">11</span>
                 <p>Highest Downloads</p>
             </div>
             <div class="book">
