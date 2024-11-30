@@ -19,6 +19,7 @@
                 <div class="p-6">
                     <h3 class="text-lg font-medium text-gray-900 mb-4">Website Analytics</h3>
 
+                        <livewire:dashboard.stats-widget /> <br>
                     <!-- Overview Cards -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                         <div class="p-6 bg-blue-100 shadow rounded-lg text-center">
@@ -30,14 +31,14 @@
                             <p class="text-gray-600">Unique Visitors</p>
                         </div>
                         <div class="p-6 bg-yellow-100 shadow rounded-lg text-center">
-                            <h2 class="text-2xl font-bold text-yellow-600">75%</h2>
+                            <h2 class="text-2xl font-bold text-yellow-600">10%</h2>
                             <p class="text-gray-600">Bounce Rate</p>
                         </div>
                     </div>
 
                     <!-- Line Chart -->
                     <div class="bg-white p-6 rounded-lg shadow">
-                        <h4 class="text-lg font-semibold text-gray-700 mb-4">. . . . . .</h4>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-4">Soon Other Analytics </h4>
                         <canvas id="trafficChart"></canvas>
                     </div>
                 </div>

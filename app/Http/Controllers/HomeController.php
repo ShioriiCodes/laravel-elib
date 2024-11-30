@@ -15,8 +15,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $Post=Uploads::all();
         return view('home.index');
+    }
+
+    public function posted()
+    {
+        $Posts=Uploads::all();
+        return view('users.index' , compact('Posts'));
     }
 
     public function uploads(Request $request)
@@ -26,6 +31,8 @@ class HomeController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:1000',
             'file' => 'required|file|mimes:pdf,doc,docx,xlsx,txt|max:2048',  // Restrict file types and size
+            'file_path' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     
         // Initialize variable for the file name
@@ -47,6 +54,7 @@ class HomeController extends Controller
                 'title' => $request->input('title'),
                 'description' => $request->input('description'),
                 'file' => $fileName, // Save the file name in the 'file' column
+                'file_path' => 'uploads/documents/' . $fileName,
             ]);
         } else {
             return redirect()->back()->with('error', 'No file found in the request.');
@@ -56,7 +64,7 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'File uploaded successfully!');
     }
     
-    
+
     
 
     public function home()

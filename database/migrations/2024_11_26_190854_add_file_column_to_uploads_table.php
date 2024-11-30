@@ -12,16 +12,19 @@ return new class extends Migration
     public function up()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('description');
-            $table->string('file')->nullable()->after('image');
+            // Add the 'file' column
+            $table->string('file')->nullable()->after('file'); // Adjust 'after' to place the column correctly
         });
     }
-    
+
+    /**
+     * Reverse the migrations.
+     */
     public function down()
     {
         Schema::table('uploads', function (Blueprint $table) {
-            $table->dropColumn(['image', 'file']);
+            // Drop the 'file' column if it exists
+            $table->dropColumn('file');
         });
     }
-    
 };

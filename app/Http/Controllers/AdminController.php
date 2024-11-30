@@ -42,7 +42,7 @@ class AdminController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->user_type === 'admin') {
-            return redirect()->route('dashboard');
+            return redirect()->route('/dashboard');
         }
 
         return redirect()->route('view');

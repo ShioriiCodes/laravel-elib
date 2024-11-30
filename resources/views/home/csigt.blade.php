@@ -16,6 +16,7 @@
                     <div class="categories">
                         <h2>Categories</h2>
                          <ul>
+                            <li><a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.index') ? 'active' : '' }}">General</a></li>
                             <li><a href="{{ route('home.csigt') }}" class="{{ request()->routeIs('home.csigt') ? 'active' : '' }}">Computer science, information & general technology</a></li>
                             <li><a href="{{ route('home.philoandpsy') }}" class="{{ request()->routeIs('home.philoandpsy') ? 'active' : '' }}">Philosophy and Psychology</a></li>
                             <li><a href="{{ route('home.Religion') }}" class="{{ request()->routeIs('home.Religion') ? 'active' : '' }}">Religion</a></li>

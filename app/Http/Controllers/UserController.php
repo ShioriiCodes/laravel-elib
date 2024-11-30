@@ -13,10 +13,9 @@ class UserController extends Controller
     public function index()
     {
         // Fetch all users from the database (example)
-        $users = User::all();
-
+        $Posts = User::all();
         // Return the 'users.index' view, passing the users
-        return view('users.index', compact('users'));
+        return view('users.index', compact('Posts'));
     }
 
     

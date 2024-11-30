@@ -66,8 +66,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function user_type()
-    {
-        return $this->belongsTo(roles::class);
-    }
+    // public function user_type()
+    // {
+    //     return $this->belongsTo(roles::class);
+    // }
 }

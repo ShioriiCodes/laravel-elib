@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('user_type')->default('user')->after('password');
+        Schema::table('uploads', function (Blueprint $table) {
+            $table->string('file_path')->nullable();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('user_type');
+        Schema::table('uploads', function (Blueprint $table) {
+            $table->dropColumn('file_path');
         });
     }
 };

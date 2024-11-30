@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubunto:wght@400;700&display=swap">
         <link rel="stylesheet" href="{{ asset('css/homeregistered.css') }}">
         <link rel="stylesheet" href="{{ asset('css/search.css') }}">
-        <link rel="icon" href="{{ asset('logo.ico') }}" type="image/x-icon">
+        <link rel="icon" hre    f="{{ asset('logo.ico') }}" type="image/x-icon">
         
     </head>
     <body>
@@ -19,7 +19,6 @@
                     <div class="categories">
                         <h2>Categories</h2>
                         <ul>
-                            <li><a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.index') ? 'active' : '' }}">General</a></li>
                             <li><a href="{{ route('home.csigt') }}" class="{{ request()->routeIs('home.csigt') ? 'active' : '' }}">Computer science, information & general works</a></li>
                             <li><a href="{{ route('home.philoandpsy') }}" class="{{ request()->routeIs('home.philoandpsy') ? 'active' : '' }}">Philosophy and Psychology</a></li>
                             <li><a href="{{ route('home.Religion') }}" class="{{ request()->routeIs('home.religion') ? 'active' : '' }}">Religion</a></li>
@@ -45,13 +44,18 @@
                                 </div>
                             </div>
                     </div>
-                               
-                    <div class="book-item">
-                        <img src="/image/b2.jpg" alt="Book Cover">
-                        <h3> World of Business</h3>
-                        <p>by Jane Smith</p><br>
-                        <p>Here is a description of the book.</p>
+                    
+                
+                    @foreach($Posts as $Post)
+                        <div class="book-item">
+                            <img src="{{ asset('storage/'.$Post->file) }}" alt="Book Cover">
+                            <h3>{{ $Post->title }}</h3>
+                            <p>{{ $Post->description }}</p>
+                        </div>
+                    @endforeach
+
                     </div>
+                   
                 </div>
             </div>
 

@@ -187,9 +187,21 @@ body {
 }
 
 .books-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex;                       /* Use grid instead of flexbox */
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+    gap: 20px;                           /* Space between items */
+
 }
+
+.book-item {
+    width: calc(25% - 20px);     
+    box-sizing: border-box;      
+}
+
+.books-grid .book-item:nth-child(4n+1) {
+    clear: left;                
+}
+
 
 .book-item {
     width: 23%;
@@ -214,6 +226,7 @@ body {
 .book-item h3 {
     font-size: 18px;
     margin-bottom: 5px;
+    color: #0f0f0f;
 }
 
 .book-item p {

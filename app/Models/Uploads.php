@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Uploads extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'file']; // Add 'file' here
+
+    // Add 'title' to the $fillable array
+    protected $fillable = [
+        'title', 'image', 'file', 'description',
+      
+    ];
 }

@@ -5,17 +5,18 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Models\Uploads;
+use App\Http\Controllers\ShowController;
 // Route::get('/', function () {
-//     return view('home.index');
+//     return view('users.index', ['Posts' => $Posts]);
 // });
 
 route::get('/',[HomeController::class, 'index']);
 Route::post('/upload_post', [HomeController::class, 'uploads']);
 Route::post('/upload_post', [HomeController::class, 'uploads'])->name('upload_post');
+Route::get('/users/index', [HomeController::class, 'posted'])->name('users.index');
 
 
-
-Route::middleware([
+Route::middleware([ 
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',

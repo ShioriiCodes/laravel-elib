@@ -18,29 +18,30 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                     <div class="p-6">
-                        {{-- @if($users->count() > 0) --}}
                             <h3 class="text-lg font-medium text-gray-900 mb-4">User List</h3>
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Picture</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Registered</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                    {{-- @foreach($users as $user) <!-- Loop through users --> --}}
+
                                         <tr>
-                                            {{-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $user->name }}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $user->email }}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $user->user_type }}</td> --}}
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Profile picture goes here</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Name goes here</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Email goes here</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Role goes here</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Date registered goes here</td>
                                         </tr>
-                                    {{-- @endforeach --}}
+
                                 </tbody>
                             </table>
-                        {{-- @else
-                            <p class="text-gray-600">No users registered yet.</p>
-                        @endif --}}
+                       
                     </div>
                 </div>
             </div>
