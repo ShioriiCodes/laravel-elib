@@ -21,50 +21,33 @@ class HomeController extends Controller
     public function posted()
     {
         $Posts=Uploads::all();
+        dd($Posts->file('file'));
         return view('users.index' , compact('Posts'));
     }
 
     public function uploads(Request $request)
     {
-        // Validate the incoming request
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:1000',
-            'file' => 'required|file|mimes:pdf,doc,docx,xlsx,txt|max:2048',  // Restrict file types and size
-            'file_path' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-    
-        // Initialize variable for the file name
-        $fileName = null;
-    
-        // Check if the file is uploaded
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $extension = strtolower($file->getClientOriginalExtension());
-    
-            // Generate a unique name for the file
-            $fileName = time() . '.' . $extension;
-    
-            // Save the file in the 'uploads/documents' directory
-            $file->move(public_path('uploads/documents'), $fileName);
-    
-            // Save the record in the database
-            Uploads::create([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'file' => $fileName, // Save the file name in the 'file' column
-                'file_path' => 'uploads/documents/' . $fileName,
-            ]);
-        } else {
-            return redirect()->back()->with('error', 'No file found in the request.');
-        }
-    
-        // Redirect back with success
-        return redirect()->back()->with('success', 'File uploaded successfully!');
-    }
-    
+       $data=new Uploads;
+       
+       $data->title=$request->title;
+       $data->description=$request->description;
 
+    // File Upload Start
+       $file=$request->file;
+
+       if($request->hasFile('file'))
+       {
+       $filename=$file->getClientOriginalName();
+       $request->file->move('uploads', $filename);
+    // File upload end
+
+       $data->file=$filename;
+       }
+
+       $data->save();
+
+       return redirect()->back();
+    }
     
 
     public function home()

@@ -11,7 +11,7 @@ use App\Models\User;
 use GuzzleHttp\Psr7\Response;
 
 use Illuminate\Auth\Access\Gate;
-
+use App\Models\Uploads;
 class AdminController extends Controller
 {
     public function index()
@@ -25,7 +25,8 @@ class AdminController extends Controller
             }
             else if($user_type == 'user')
             {
-                return view('users.index');
+                $Posts = Uploads::all();
+                return view('users.index', compact('Posts'));
             }
             else
             {
@@ -34,18 +35,14 @@ class AdminController extends Controller
         }
     }
 
-    public function dashboard()
-    {
-        $user_type = User::with('user_type')->get();
-    }
 
     protected function authenticated(Request $request, $user)
     {
         if ($user->user_type === 'admin') {
-            return redirect()->route('/dashboard');
+            return redirect()->intended(route('dashboard'))->with('success','Welcome to your dashboard');
         }
 
-        return redirect()->route('view');
+        return redirect()->intended(route('users.index'))->with('success','Welcome to your profile page');
     }
 
     

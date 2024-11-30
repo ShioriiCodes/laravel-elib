@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Models\Uploads;
 use App\Http\Controllers\ShowController;
+use App\Mail\YourMailable;
+
 // Route::get('/', function () {
 //     return view('users.index', ['Posts' => $Posts]);
 // });
@@ -13,7 +15,6 @@ use App\Http\Controllers\ShowController;
 route::get('/',[HomeController::class, 'index']);
 Route::post('/upload_post', [HomeController::class, 'uploads']);
 Route::post('/upload_post', [HomeController::class, 'uploads'])->name('upload_post');
-Route::get('/users/index', [HomeController::class, 'posted'])->name('users.index');
 
 
 Route::middleware([ 
@@ -27,7 +28,8 @@ Route::middleware([
 });
 
 route::get('/home',[AdminController::class, 'index']);
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/index', [UserController::class, 'index'])->name('users.index');
+
 
 Route::get('/home/index', [HomeController::class, 'home'])->name('home.index');
 Route::get('/home/catalog', [HomeController::class, 'catalog'])->name('home.catalog');
@@ -52,3 +54,6 @@ Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')
 Route::get('/analytic', function () {
     return view('/home/analytic');
 })->name('analytic');
+
+
+Route::get('/send-email', [YourMailable::class, 'sendEmail']);

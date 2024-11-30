@@ -46,12 +46,17 @@
                             </div>
                     </div>
                                
-                    <div class="book-item">
-                        <img src="/image/b2.jpg" alt="Book Cover">
-                        <h3> World of Business</h3>
-                        <p>by Jane Smith</p><br>
-                        <p>Here is a description of the book.</p>
+                    <div class="books-grid">
+                        @foreach ($Posts as $post)
+                            <div class="book-item">
+                                <!-- Display pdf file -->
+                                <a href="{{ asset('uploads/' . $post->file) }}"><img src="{{ asset('uploads/' . $post->file) }}" onerror="this.src='{{ asset('uploads/pdf.png') }}'" alt=""></a> 
+                                <a href="{{ asset('uploads/' . $post->file) }}" download><h3>{{ $post->title }}</h3></a>
+                                <p>{{ $post->description }}</p>
+                            </div>
+                        @endforeach
                     </div>
+                    
                 </div>
             </div>
 

@@ -49,6 +49,15 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
+        'smtp2' => [
+        'transport' => 'smtp',
+        'host' => 'smtp.gmail.com',
+        'port' => 587,
+        'encryption' => 'tls',
+        'username' => 'gplumber404@gmail.com',
+        'password' => 'ugor ofww panx mrko',
+    ],
+
         'ses' => [
             'transport' => 'ses',
         ],
@@ -97,6 +106,17 @@ return [
 
     ],
 
+
+    'stream'=>[
+        'ssl'=>[
+            'allow_self_signed'=>true,
+            'verify_peer'=>false,
+            'verify_peer_name'=>false,
+        ],
+    ],
+
+    
+
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address
@@ -109,8 +129,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'kenzunknowntv@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'LARAVEL'),
     ],
 
 ];

@@ -190,7 +190,6 @@ body {
     display: flex;                       /* Use grid instead of flexbox */
     grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
     gap: 20px;                           /* Space between items */
-
 }
 
 .book-item {
@@ -227,6 +226,10 @@ body {
     font-size: 18px;
     margin-bottom: 5px;
     color: #0f0f0f;
+}
+.book-item h3:hover {
+    color: #3f00fc;
+    text-decoration: underline;
 }
 
 .book-item p {
