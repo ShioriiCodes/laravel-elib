@@ -2,18 +2,17 @@
 
     <div class="flex">
         <!-- Sidebar -->
-        <aside class="w-64 bg-[#131B31] text-white min-h-screen">
+        <aside class="w-64 bg-[#131B31] text-white min-h-screen" style="padding-top: 5%">
             <div class="px-6 py-4">
                 <h2 class="text-lg font-bold">Dashboard</h2>
                 <nav class="mt-6 space-y-2">
-                    <a href="/dashboard" class="{{ request()->routeIs('dashboard') ? 'bg-gray-700' : '' }} block px-4 py-2 rounded hover:bg-gray-700">Home</a>
-                    <a href="{{ route('home.create') }} " class="{{ request()->routeIs('users') ? 'bg-gray-700' : '' }} block px-4 py-2 rounded hover:bg-gray-700">Users</a>
+                    <a href="/dashboard" class="{{ request()->routeIs('dashboard') ? 'bg-gray-700' : '' }} block px-4 py-2 rounded hover:bg-gray-700">Upload</a>
+                    <a href="{{ route('home.create') }} " class="{{ request()->routeIs('users') ? 'bg-gray-700' : '' }} block px-4 py-2 rounded hover:bg-gray-700">Users </a>
                     <a href="/analytic" class="{{ request()->routeIs('analytics') ? 'bg-gray-700' : '' }} block px-4 py-2 rounded hover:bg-gray-700">Analytics</a>
-                    <a href="{{ route('users.index') }}" class=" block px-4 py-2 rounded hover:bg-gray-700">View</a>
                 </nav>
             </div>
         </aside>
-        <div class="flex-1 bg-gray-100 p-6">
+        <div class="flex-1 bg-gray-100 p-6" style="padding-top: 6%">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div class="p-6">

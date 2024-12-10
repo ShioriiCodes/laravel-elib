@@ -1,42 +1,50 @@
-<nav x-data="{ open: false }" class="z-10 bg-[#131B31] border-b border-gray-100 ">
+<nav x-data="{ open: false }" class="z-10 bg-[#131B31] border-b border-gray-100 position: fixed w-full ">
     <!-- Primary Navigation Menu -->
     <div class="z-10 max-w-7xl mx-auto px-4 sm:px-7 lg:px-8">
         <div class="z-10 flex justify-between h-16">
-            <div class="z-10 flex">
+            <div class="z-10 flex justify-between w-full">
                 <!-- Logo -->
                 <div class="z-10 shrink-0 flex items-center">
-                    <a href="/">
+                    <a href="/home/index">
                         <img src="{{ asset('/logo/logo2.png') }}" alt="Your Logo" class="w-auto h-12">
                     </a>
                 </div>
-
+            
                 <!-- Navigation Links -->
-              
+                <div class="flex items-center space-x-8 sm:ml-auto">
                     @if(Auth::user()->user_type === 'user')
-                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                        <x-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home.index')">
                             {{ __('Home') }}
                         </x-nav-link>
-                    </div>
+                        <x-nav-link href="{{ route('home.catalog') }}" :active="request()->routeIs('home.catalog')">
+                            {{ __('Category') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.announcement') }}" :active="request()->routeIs('home.announcement')">
+                            {{ __('Announcement') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.about') }}" :active="request()->routeIs('home.about')">
+                            {{ __('About') }}
+                        </x-nav-link>
                     @elseif(Auth::user()->user_type === 'admin')
-                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-nav-link>   
-                        </div>
-                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
-                                {{ __('View') }}
-                            </x-nav-link>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link href="{{ route('home.create') }}" :active="request()->routeIs('home.create')">
-                                {{ __('User') }}
-                            </x-nav-link>
-                        </div> --}}
+                        <x-nav-link href="{{route('dashboard')}}" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home.index')">
+                            {{ __('Home') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.catalog') }}" :active="request()->routeIs('home.catalog')">
+                            {{ __('Category') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.announcement') }}" :active="request()->routeIs('home.announcement')">
+                            {{ __('Announcement') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('home.about') }}" :active="request()->routeIs('home.about')">
+                            {{ __('About') }}
+                        </x-nav-link>
                     @endif
-
+                </div>
             </div>
+            
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
@@ -121,6 +129,7 @@
                             <x-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
+                            
 
                             {{-- <x-dropdown-link href="{{ route('users.index') }}">
                                 {{ __('Back') }}

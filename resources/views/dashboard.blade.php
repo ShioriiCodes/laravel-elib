@@ -6,21 +6,20 @@
 
     <div class="flex">
         <!-- Sidebar -->
-        <aside class="w-64 bg-[#131B31] text-white min-h-screen">
+        <aside class="w-64 bg-[#131B31] text-white min-h-screen" style="padding-top: 5%;">
             <div class="px-6 py-4">
                 <h2 class="text-lg font-bold">Dashboard</h2>
                 <nav class="mt-6 space-y-2">
-                    <a href="/dashboard" class="block px-4 py-2 rounded hover:bg-gray-700">Home</a>
-                    <a href="{{ route('home.create') }}" class="block px-4 py-2 rounded hover:bg-gray-700">Users</a>
+                    <a href="/dashboard" class="block px-4 py-2 rounded hover:bg-gray-700">Upload</a>
+                    <a href="{{ route('home.create') }}" class="block px-4 py-2 rounded hover:bg-gray-700">Users </a>
                     <a href="/analytic" class="block px-4 py-2 rounded hover:bg-gray-700">Analytics</a>
-                    <a href="{{ route('users.index') }}" class="block px-4 py-2 rounded hover:bg-gray-700">View</a>
                 </nav>
             </div>
         </aside>
     
     
-        <div style="background-color: #131B31; padding: 20px 50px; border-radius: 8px; max-width: 1900px; margin: auto; margin-top: 2%; color: #fefefe; font-family: Ubunto, sans-serif;">
-            <label class="text-2xl text-white" style="margin: 29%;">Upload Post</label><br><br>
+        <div style="background-color: #131B31; padding: 20px 50px; border-radius: 8px; max-width: 1900px; margin: auto; margin-top: 5%; color: #fefefe; font-family: Ubunto, sans-serif;">
+            <label class="text-2xl text-white" style="margin: 20%;">Upload eBooks</label><br><br>
         
             <!-- Form to upload a file -->
             <form id="upload_form" action="{{ url('/upload_post') }}" method="POST" enctype="multipart/form-data">
@@ -64,10 +63,10 @@
                     <label style="display: block; font-weight: bold; margin-bottom: 5px;">Upload a File</label>
                     <input type="file" name="file" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" required>
                 </div>
-                {{-- <div style="margin-bottom: 15px;">
+                 <div style="margin-bottom: 15px;">
                     <label style="display: block; font-weight: bold; margin-bottom: 5px;">Upload a Image</label>
                     <input type="file" name="image" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" required>
-                </div> --}}
+                </div> 
         
                 <!-- Submit Button -->
                 <div style="margin-bottom: 15px;">
@@ -145,10 +144,6 @@
             }
         });
     </script>
-    
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     
     </x-app-layout>
-  
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

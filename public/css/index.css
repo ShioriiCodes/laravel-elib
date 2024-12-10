@@ -18,7 +18,7 @@ button {
 .banner {
     text-align: center;
     background-image: url('/image/librarys.png');
-    padding: 230px 0;
+    padding: 270px 0;
     background-size: cover;
     background-position: center;
 }
@@ -68,6 +68,7 @@ button {
 
 .book:hover {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .badge {

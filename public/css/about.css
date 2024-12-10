@@ -1,7 +1,12 @@
 body {
     color: #ffffff;
-    background: linear-gradient(177deg, rgba(25,51,124,1) 0%, rgba(20,43,106,1) 15%, rgba(28,43,84,1) 52%, rgba(19,27,49,1),rgba(20,43,106,1) , rgba(20,43,106,1) 100%);
+    background: linear-gradient(to bottom, rgba(25,51,124,1) 0%, rgba(20,43,106,1) 15%, rgba(28,43,84,1) 52%, rgba(19,27,49,1) 100%);
 
+}
+
+.container{
+    color: #ffffff ;
+    background: linear-gradient(177deg, rgba(25,51,124,1) 0%, rgba(20,43,106,1) 15%, rgba(28,43,84,1) 52%, rgba(19,27,49,1),rgba(20,43,106,1) , rgba(20,43,106,1) 100%) !important;
 }
 /*About Us*/
 .about-us {
@@ -13,7 +18,7 @@ body {
 .hero-section {
     text-align: center;
     margin-bottom: 50px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .hero-section h1, p{
@@ -40,7 +45,7 @@ body {
 }
 
 .hero-section button {
-    background-color: #FC5400;
+    background-color: #e25915;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -51,7 +56,8 @@ body {
 }
 
 .hero-section button:hover {
-    background-color: #842c00;
+    background-color: #ff6619;
+    transition: .3s ease;
 }
 
 .hero-section .team-photo {
@@ -73,6 +79,13 @@ body {
 }
 
 /* Metrics Section */
+.metric:hover {
+    background-color: #f7f7f7; 
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
 .metrics {
     display: flex;
     justify-content: space-around;
@@ -81,12 +94,23 @@ body {
 
 .metric {
     text-align: center;
+    padding: 15px;
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    width: 20%; 
 }
 
 .metric h2 {
     font-size: 40px;
-    color: #FC5400;
+    color: #FC5400; /* Orange color */
     margin-bottom: 10px;
+}
+
+.metric p {
+    font-size: 24px;
+    color: #333; 
+    margin-top: 5px;
 }
 
 /* Executives Section */
@@ -308,10 +332,17 @@ body {
 .contact-info {
     flex: 1;
     padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    
 }
 
 .contact-info h1 {
     margin-top: 60px;
+    font-size: larger;
+    font-weight: bold;
 }
 
 .contact-info ul {

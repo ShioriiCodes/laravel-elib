@@ -21,12 +21,11 @@ class AdminController extends Controller
             $user_type = Auth::user()->user_type;
             if($user_type == 'admin')
             {
-                return view('/dashboard');
+                return view('dashboard');
             }
             else if($user_type == 'user')
             {
-                $Posts = Uploads::all();
-                return view('users.index', compact('Posts'));
+                return view('home.index');
             }
             else
             {
@@ -42,7 +41,7 @@ class AdminController extends Controller
             return redirect()->intended(route('dashboard'))->with('success','Welcome to your dashboard');
         }
 
-        return redirect()->intended(route('users.index'))->with('success','Welcome to your profile page');
+        return redirect()->intended(route('home.index'))->with('success','Welcome to your profile page');
     }
 
     

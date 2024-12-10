@@ -10,19 +10,29 @@ use App\Models\Upload;  // If you want to save data to a database
 use Illuminate\Support\Facades\Storage;
 use App\Models\Uploads;
 use Illuminate\Support\Facades\Log;
-
+use App\Models\User;
 class HomeController extends Controller
 {
+
     public function index()
     {
-        return view('home.index');
+        return view('users.index');
+    }
+
+    public function show() // Renaming to index, as it seems to show all users
+    {
+        // Fetch all users from the database
+        $users = User::all();  // Get all users in the system
+        dd($users); 
+        // Pass the users data to the 'home.create' view
+        return view('home.create', compact('users'));
     }
 
     public function posted()
     {
         $Posts=Uploads::all();
         dd($Posts->file('file'));
-        return view('users.index' , compact('Posts'));
+        return view('home.catalog' , compact('Posts'));
     }
 
     public function uploads(Request $request)
@@ -67,9 +77,12 @@ class HomeController extends Controller
         return view('home.about');
     }
 
+
+
     public function create()
     {
-        return view('home.create');
+        $Posts = User::all();
+        return view('home.create' , compact('Posts'));
     }
     public function csigt()
     {

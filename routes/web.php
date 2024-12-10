@@ -16,7 +16,6 @@ route::get('/',[HomeController::class, 'index']);
 Route::post('/upload_post', [HomeController::class, 'uploads']);
 Route::post('/upload_post', [HomeController::class, 'uploads'])->name('upload_post');
 
-
 Route::middleware([ 
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -27,15 +26,13 @@ Route::middleware([
     })->name('dashboard');
 });
 
-route::get('/home',[AdminController::class, 'index']);
-Route::get('/users/index', [UserController::class, 'index'])->name('users.index');
-
-
+//admin
 Route::get('/home/index', [HomeController::class, 'home'])->name('home.index');
 Route::get('/home/catalog', [HomeController::class, 'catalog'])->name('home.catalog');
 Route::get('/home/announcement', [HomeController::class, 'announcement'])->name('home.announcement');
 Route::get('/home/about', [HomeController::class, 'about'])->name('home.about');
 
+//category
 Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
 Route::get('/home/ComSci-info-&-gen-technology', [HomeController::class, 'csigt'])->name('home.csigt');
 Route::get('/home/Philosophy-and-Psychology', [HomeController::class, 'PandP'])->name('home.philoandpsy');
@@ -48,7 +45,7 @@ Route::get('/home/literature', [HomeController::class, 'literature'])->name('hom
 Route::get('/home/history-geography', [HomeController::class, 'historyGeography'])->name('home.history-geography');
 Route::get('/home/course-of-studies', [HomeController::class, 'program'])->name('home.program');
 
-Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/home', [AdminController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('/users/index', [UserController::class, 'index'])->middleware('auth')->name('users.index');
 
 Route::get('/analytic', function () {
@@ -57,3 +54,9 @@ Route::get('/analytic', function () {
 
 
 Route::get('/send-email', [YourMailable::class, 'sendEmail']);
+
+//users only
+Route::get('/users/catalog', [UserController::class, 'catalog'])->name('users.catalog');
+Route::get('/users/about', [UserController::class, 'about'])->name('users.about');
+Route::get('/users/announcement', [UserController::class, 'announcement'])->name('users.announcement');
+Route::get('/users/index', [UserController::class, 'home'])->name('users.index');

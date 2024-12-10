@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,43 +14,31 @@
 </head>
 <body>
     <!-- Navbar Section -->
-    <header>
-        <div class="header-container">
-            <!-- Library Name & Logo -->
-            <div class="logo">
-                <img src="/logo/logo2.png" alt="Library Logo">
-                <h1>Category</h1>
-            </div>
-            <!-- Navigation Menu -->
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="{{ route('home.index') }}">Home</a></li>
-                    <li><a href="{{ route('home.catalog') }}">Category</a></li>
-                    <li><a href="{{ route('home.announcement') }}">Announcement</a></li>
-                    <li><a href="{{ route('home.about') }}">About Us</a></li>
-                        @if (Route::has('login'))
-                            @auth
-                                <div class="dropdown">
-                                    <button class="dropbtn">
-                                        <ion-icon name="filter-outline"></ion-icon>
-                                    </button>
-                                    <div class="dropdown-content">
-                                        <a href="{{ url('/dashboard') }}">{{ Auth::user()->name }}</a>
-                                        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                                            @csrf
-                                            <a href="#" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                            @else
-                                <li><a class='signup-btn' href='{{ route('login') }}'>Sign in</a></li>
-                            @endauth
-                        @endif
-                </ul>
-            </nav>
-        </div>
-    </header>
+    @if (Route::has('login'))
+        @auth
+            <header>
+                @else
+                    <li><a class='signup-btn' href='{{ route('login') }}'>Sign in</a></li>
+                    <div class="header-container">
+                        <!-- Library Name & Logo -->
+                        <div class="logo">
+                            <img src="/logo/logo2.png" alt="Library Logo">
+                            <h1>Category</h1>
+                        </div>
+                        <!-- Navigation Menu -->
+                        <nav class="nav-menu">
+                            <ul>
+                                <li><a href="href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard</a></li>
+                                <li><a href="{{ route('home.index') }}">Home</a></li>
+                                <li><a href="{{ route('home.catalog') }}">Category</a></li>
+                                <li><a href="{{ route('home.announcement') }}">Announcement</a></li>
+                                <li><a href="{{ route('home.about') }}">About Us</a></li>                       
+                            </ul>
+                        </nav>
+                    </div>
+            </header>
+        @endauth
+    @endif
 
     <!-- Banner Section -->
     <section id="search">
@@ -130,3 +119,4 @@
     
 </body>
 </html> 
+</x-app-layout>
